@@ -4,5 +4,9 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+# notice how we need two crates to use the serde functionality
+# in this case we are using the json functionality
+# we really need the serde (crate) library in order to have access to 
+# the serialize and deserialize attribute
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1"
