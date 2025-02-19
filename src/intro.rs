@@ -3,6 +3,7 @@ use serde::{Deserialize, Serialize};
 // adding this to the custom data structure automatically makes
 // them serializable and deserializable
 #[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all="camelCase")]
 pub struct Dog {
     // this basically translate to, convert name to pet_name during serialization
     // convert pet_name to name during deserialization
@@ -10,5 +11,12 @@ pub struct Dog {
     pub name: String,
     pub color: String,
     pub breed: String,
+    pub owner: DogOwner,
 }
 
+
+#[derive(Serialize, Deserialize, Debug)]
+pub struct DogOwner {
+    pub first_name: String,
+    pub last_name: String,
+}

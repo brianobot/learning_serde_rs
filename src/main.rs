@@ -44,10 +44,15 @@ fn main() {
         name: String::from("Bruno"), 
         color: String::from("Brown"), 
         breed: String::from("Ekuke") ,
+        owner: DogOwner {
+            first_name: "Brian".to_string(),
+            last_name: "Obot".to_string(),
+        }
     };
 
     // Serialization to JSON String
     let dog_ser = to_string(&bruno);
+    // we can also use the to_string_pretty
     // converts a serializable object/data structure to a json string
     let mut result: String = String::new();
 
